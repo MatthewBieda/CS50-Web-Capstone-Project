@@ -1,0 +1,30 @@
+body {
+    margin-left: 10px;
+    background-image: url("/static/blog/white-waves.png");
+}
+
+form {
+    width: 50%;
+}
+
+#readingbtn {
+    width: 100%;
+}
+
+#jseditbutton {
+    margin: 0px;
+}
+
+/* For mobile: */
+#jstextarea {
+    width: 70%;
+    margin: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    #jstextarea {
+        width: 30%;
+        margin: 0px;
+    }
+}
