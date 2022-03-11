@@ -74,5 +74,7 @@ No special requirements, just run like a regular django application
 "python manage.py runserver"
 
 regular users: mike, tom
+
 admin user: matt
+
 all passwords: 123
