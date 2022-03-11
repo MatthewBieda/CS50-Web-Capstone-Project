@@ -1,0 +1,12 @@
+{% extends "blog/layout.html" %}
+
+{% block body %}
+    <h2>My Articles: </h2>
+    <ul>
+    {% for article in object_list %}
+        <li><a href="{{article.id}}">{{ article.title }}</a></li>
+        <p>Published on: {{ article.date_published }}</p>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

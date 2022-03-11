@@ -1,0 +1,15 @@
+{% extends "blog/layout.html" %}
+
+{% block body %}
+<h3>Your personal reading list:</h3><br>
+
+{% for entry in reading_list %}
+    <p><a href="/blog/articles/{{entry.savedpost.id}}">{{ entry.savedpost.title }}</a></p>
+    <form method="get">
+        <input type="submit" class="btn btn-info btn-sm" value="Remove from reading list" name="readinglistremove">
+        <input type="hidden" name="ModelRef" value="{{entry.id}}">
+    </form>
+{% endfor %}
+
+{% endblock %}
+

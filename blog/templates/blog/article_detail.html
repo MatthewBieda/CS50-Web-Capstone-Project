@@ -1,0 +1,46 @@
+{% extends "blog/layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center">{{ article.title }}</h1>
+    <div class="container">
+    <p style="white-space: pre-line">{{ article.body }}</p>
+    </div>
+    <p style="text-align: center">Published: {{ article.date_published }}</p><br>
+
+    {% if user.is_authenticated %}
+        {% if not readinglist %}
+    <div style="text-align: center">
+        <p style="text-align: center">Enjoyed this article?</p>
+        <form method="get" id="readingbtn">
+            <input type="submit" class="btn btn-primary" value="Add to reading list" name="addreadinglist">
+        </form>
+    </div> <br>
+        {% endif %}
+    {% endif %}
+
+    <div class="container">
+    <h5>Current comments:</h6>
+    {% for comment in comments %}
+       <p id="{{comment.id}}" style="margin-bottom: 0px">{{ comment.contents }}</p> 
+       <p>Posted by: {{comment.user}}</p>
+       {% if comment.user == user %}
+       <button class="btn btn-info" id="editbutton" onclick="edit(this)">Edit your comment</button>
+       {% endif %}
+       <br>
+    {% endfor %}
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="container">
+        <div>
+            <div>
+        <form method="post">
+            {% csrf_token %} 
+            {{ commentsform.as_p }}
+        <button type="submit" class="btn btn-primary" name="save_comment">Add Comment</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+
