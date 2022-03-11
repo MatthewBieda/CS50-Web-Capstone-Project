@@ -55,6 +55,7 @@ you need so I had to add AUTH_USER_MODEL = 'blog.User', add 'blog' to installed 
 and the same for Template Dirs. Also I needed LOGIN_REDIRECT_URL = 'index' and LOGOUT_REDIRECT_URL = 'index' for the CBV authentication to work.
 
 Additional comments: 
+
 Styling is implemented through Bootstrap's pre-defined CSS classes as they look professional and are easy to add to your codebase. Using Bootstrap 
 does limit how creative you can be with your site design, so if you are doing something very creative you will probably want to use your own custom 
 CSS or a less opionated framework like Tailwind CSS. 
