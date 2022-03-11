@@ -12,7 +12,7 @@ around the RDBMS model. As this is a simple low-traffic web app SQLite is perfec
 
 I have used several models, created a complete authentication system and I made use of Django's generic class-based views to cut down on the 
 boilerplate code in my views. This requires a stronger understanding of Django and abstraction than sticking to the function-based views used in the
-course but it does makes your code must nicer to read for yourself and other developers. I also included a subtle background, a personal reading list
+course but it does makes your code much nicer to read for yourself and other developers. I also included a subtle background, a personal reading list
 for every user and the ability to live edit your own comments. The superuser (myself) also has the ability to create posts, also using the admin 
 panel I have full access to the entire database. However I didn't to expose all this functionality via the API, to ensure I don't accidentally delete
 one of my posts for instance. Since it is long-form content is it pre-edited and shouldn't require updating. Users are free to leave comments on my 
